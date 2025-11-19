@@ -11,7 +11,7 @@ import { Env, ChatMessage } from "./types";
 
 // Model ID for Workers AI model
 // https://developers.cloudflare.com/workers-ai/models/
-const MODEL_ID = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
+const MODEL_ID = "@cf/openai/gpt-oss-120b";
 
 // Default system prompt
 const SYSTEM_PROMPT =
@@ -68,7 +68,7 @@ async function handleChatRequest(
     }
 
     const response = await env.AI.run(
-      @cf/openai/gpt-oss-120b,
+      MODEL_ID,
       {
         messages,
         max_tokens: 1024,

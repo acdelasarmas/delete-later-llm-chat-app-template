@@ -68,7 +68,7 @@ async function handleChatRequest(
     }
 
     const response = await env.AI.run(
-      MODEL_ID,
+      @cf/openai/gpt-oss-120b,
       {
         messages,
         max_tokens: 1024,
